@@ -1,0 +1,5 @@
+d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatModel\bin\Debug\TrashBoatModel.dll
+d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatModel\bin\Debug\TrashBoatModel.pdb
+d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatModel\obj\Debug\TrashBoatModel.dll
+d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatModel\obj\Debug\TrashBoatModel.pdb
+d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatModel\obj\Debug\TrashBoatModel.csprojResolveAssemblyReference.cache

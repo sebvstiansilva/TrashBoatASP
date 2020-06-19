@@ -67,18 +67,73 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Principal.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AgregarContenedor.aspx" />
+    <Content Include="AgregarEstado.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DetalleContenedores.aspx" />
+    <Content Include="MostrarEstados.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarContenedor.aspx.cs">
+      <DependentUpon>AgregarContenedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarContenedor.aspx.designer.cs">
+      <DependentUpon>AgregarContenedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarEstado.aspx.cs">
+      <DependentUpon>AgregarEstado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarEstado.aspx.designer.cs">
+      <DependentUpon>AgregarEstado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleContenedores.aspx.cs">
+      <DependentUpon>DetalleContenedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetalleContenedores.aspx.designer.cs">
+      <DependentUpon>DetalleContenedores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarEstados.aspx.cs">
+      <DependentUpon>MostrarEstados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarEstados.aspx.designer.cs">
+      <DependentUpon>MostrarEstados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Principal.Master.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Principal.Master.designer.cs">
+      <DependentUpon>Principal.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrashBoatModel\TrashBoatModel.csproj">
+      <Project>{F94DA6BE-C598-4CF9-9519-2AA1192B66BD}</Project>
+      <Name>TrashBoatModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
