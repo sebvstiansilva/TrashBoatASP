@@ -13,31 +13,23 @@
                             ID="numeroSerieTxt" 
                             runat="server" 
                             CssClass="form-control"></asp:TextBox>
-                        
-                        <asp:RequiredFieldValidator 
-                            ControlToValidate="numeroSerieTxt"
-                            ID="numeroSerieValidator" 
-                            runat="server" 
-                            ErrorMessage="Debe ingresar un numero de serie"></asp:RequiredFieldValidator>
-                    </div>
-                    <div class="form-group">
-                        <label for="nivelLlenadoTxt">Nivel de llenado: </label>
-                        <asp:TextBox
-                            ID="nivelLlenadoTxt"
-                            runat="server"
-                            CssClass="form-control"></asp:TextBox>
-                        
+                        <asp:CustomValidator 
+                            ID="existValidator" runat="server" CssClass="text-danger"
+                             OnServerValidate="numeroSerieValidator_ServerValidate" Display="Dynamic"></asp:CustomValidator>
                         <asp:RequiredFieldValidator
-                            ControlToValidate="nivelLlenadoTxt"
-                            ID="nivelLlenadoValidator"
+                            ControlToValidate="numeroSerieTxt"
+                            ID="numeroSerieValidator"
                             runat="server"
-                            ErrorMessage="Debe ingresar nivel de llenado"></asp:RequiredFieldValidator>
+                            Display="Dynamic"
+                            ErrorMessage="Debe ingresar número de serie"
+                            CssClass="text-danger"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group">
                         <label for="regionDdl">Region: </label>
                         <asp:DropDownList ID="regionDdl"
                              runat="server"
                             CssClass="form-control">
+                            <asp:ListItem Value="0" Text="Seleccione una región..."></asp:ListItem>
                             <asp:ListItem Value="Región Arica y Parinacota" Text="Región de Arica y Parinacota"></asp:ListItem>
                             <asp:ListItem Value="Región de Tarapacá" Text="Región de Tarapacá"></asp:ListItem>
                             <asp:ListItem Value="Región de Antofagasta" Text="Region de Antofagasta"></asp:ListItem>
@@ -55,18 +47,16 @@
                             <asp:ListItem Value="Región de Aysén del General Carlos Ibáñez del Campo" Text="Región de Aysén del General Carlos Ibáñez del Campo"></asp:ListItem>
                             <asp:ListItem Value="Región de Magallanes y de la Antártica Chilena" Text="Region de Magallanes y de la Antártica Chilena"></asp:ListItem>
                         </asp:DropDownList>
+                        <asp:CustomValidator ID="regionValidator" 
+                            runat="server" 
+                            ErrorMessage="Debe seleccionar una región de la lista." 
+                            CssClass="text-danger"
+                            OnServerValidate="regionValidator_ServerValidate"
+                            Display="Dynamic"></asp:CustomValidator>
                     </div>
                     <div class="form-group">
                         <label for="sedeDdl">Sede: </label>
-                        <asp:DropDownList ID="sedeDdl" runat="server" CssClass="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label for="estadoDdl">Estado: </label>
-                        <asp:DropDownList ID="estadoDdl" runat="server" CssClass="form-control">
-                            <asp:ListItem Value="1" Text="Cerca del Límite"></asp:ListItem>
-                            <asp:ListItem Value="0" Text="OK"></asp:ListItem>
-                            <asp:ListItem Value="-1" Text="ERROR"></asp:ListItem>
-                        </asp:DropDownList>
+                        <asp:DropDownList ID="sedeDdl" runat="server" CssClass="form-control"></asp:DropDownList>
                     </div>
                 </div>
                 <div class="card-footer">

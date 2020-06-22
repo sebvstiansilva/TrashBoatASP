@@ -11,7 +11,8 @@ namespace TrashBoatModel.DAL
     {
         private static List<Contenedor> 
             contenedores = new List<Contenedor>();
-        private static ContenedorDAL instance;
+
+        public static ContenedorDAL instance;
         public ContenedorDAL()
         {
 
@@ -36,7 +37,7 @@ namespace TrashBoatModel.DAL
             contenedores.Remove(contenedor);
         }
 
-        public List<Contenedor> FindByTipo(string region)
+        public List<Contenedor> FindByRegion(string region)
         {
             return contenedores.FindAll(c => c.Region == region);
         }
@@ -45,5 +46,11 @@ namespace TrashBoatModel.DAL
         {
             return contenedores;
         }
+
+        public List<Contenedor> GetContenedorById(string contenedor)
+        {
+            return contenedores.FindAll(c => c.NumeroDeSerie == contenedor);
+        }
+
     }
 }

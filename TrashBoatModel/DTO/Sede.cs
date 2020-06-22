@@ -14,19 +14,17 @@ namespace TrashBoatModel.DTO
         private String direccion;
         private List<Contenedor> contenedores;
 
+        public Sede()
+        {
+
+        }
+
         public Sede(int id, string nombre, string direccion)
         {
             this.id = id;
             this.nombre = nombre;
             this.direccion = direccion;
         }
-
-        public void AgregarContenedor(Contenedor contenedor)
-        {
-            this.contenedores.Add(contenedor);
-        }
-
-        
 
         public int Id
         {

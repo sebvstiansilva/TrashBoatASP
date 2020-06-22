@@ -12,6 +12,6 @@ namespace TrashBoatModel.DAL
         void Add(Contenedor contenedor);
         List<Contenedor> GetAll();
         void Delete(Contenedor contenedor);
-        List<Contenedor> FindByTipo(string region);
+        List<Contenedor> FindByRegion(string region);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,54 +13,80 @@ namespace TrashBoatASP
 {
     public partial class AgregarContenedor : System.Web.UI.Page
     {
-        List<Sede> sedes = new List<Sede>();
-        private Sede sede = new Sede(1, "Sede Central", "Sede Central Santiago");
+
+        private Regex rg = new Regex("^[a-zA-Z0-9 ]*$");
+        
+        private static List<Sede> sedes = new List<Sede> {
+            new Sede {
+                Id = 1,
+                Nombre = "Sede Central",
+                Direccion = "Sede Central Santiago"
+            },
+            new Sede
+            {
+                Id = 2,
+                Nombre = "Sede Valparaiso",
+                Direccion = "Av. España 225"
+            }
+            };
+        private static List<Contenedor> contenedores = new ContenedorDAL().GetAll();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            sedes.Add(sede);
-            this.sedeDdl.DataSource = sedes;
-            this.sedeDdl.DataTextField = "Nombre";
-            this.sedeDdl.DataValueField = "Id";
-            this.sedeDdl.DataBind();
+            if (!IsPostBack)
+            {
+                this.sedeDdl.DataSource = sedes;
+                this.sedeDdl.DataValueField = "Id";
+                this.sedeDdl.DataTextField = "Nombre";
+                this.sedeDdl.DataBind();
+            }
         }
 
         protected void registrarContenedorBtn_Click(object sender, EventArgs e)
         {
-            // if(this.Page.IsValid)
-            // {
-                string numeroSerie = this.numeroSerieTxt.Text.Trim();
-                int nivelLlenado = Convert.ToInt32(this.nivelLlenadoTxt.Text.Trim());
+            if (this.IsValid)
+            {
+                string numeroSerie = this.numeroSerieTxt.Text.Trim().ToUpper();
                 string region = this.regionDdl.SelectedValue.ToString();
-                string sede = this.sedeDdl.SelectedValue.ToString();
-                int estado = 0;
-                switch (estadoDdl.SelectedIndex)
-                {
-                    case 0:
-                        estado = 1;
-                        break;
-                    case 1:
-                        estado = 0;
-                        break;
-                    case 2:
-                        estado = -1;
-                        break;
-                }
-
-            Contenedor contenedor = new Contenedor()
+                int idSedeSelected = Int32.Parse(sedeDdl.SelectedItem.Value);
+                Sede sedeSelected = sedes.Find(s => s.Id == idSedeSelected); // Predicado que busca el objeto con el id obtenido en el dropdown
+                
+                Contenedor contenedor = new Contenedor()
                 {
                     NumeroDeSerie = numeroSerie,
-                    NivelLlenado = nivelLlenado,
                     Region = region,
-                    IdSede = sede,
-                    TipoEstado = estado
+                    Sede = sedeSelected
                 };
-                IContenedor dal = new ContenedorDAL();
-                dal.Add(contenedor);
 
-                Response.Redirect("DetalleContenedores.aspx");
+                IContenedor dal = new ContenedorDAL();
                 
-            // }
+                dal.Add(contenedor);
+                
+                Response.Redirect("DetalleContenedores.aspx");
+
+            }
+        }
+
+        protected void numeroSerieValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (contenedores.Exists(c => c.NumeroDeSerie == numeroSerieTxt.Text))
+            {
+                args.IsValid = false;
+                existValidator.ErrorMessage = "Ya existe este contenedor<br>";
+            } else if (!rg.IsMatch(numeroSerieTxt.Text))
+            {
+                args.IsValid = false;
+                existValidator.ErrorMessage = "No puede ingresar caracteres especiales<br>";
+            } else
+            {
+                args.IsValid = true;
+            }
+
+        }
+
+        protected void regionValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = (regionDdl.SelectedItem.Value != "0");
         }
     }
 }

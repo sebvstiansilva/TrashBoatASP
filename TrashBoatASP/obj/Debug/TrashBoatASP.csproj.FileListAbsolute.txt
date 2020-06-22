@@ -1,4 +1,3 @@
-d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\obj\Debug\TrashBoatASP.csprojResolveAssemblyReference.cache
 d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\bin\roslyn\csc.exe
 d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -18,5 +17,6 @@ d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\bin\Microsoft
 d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\bin\TrashBoatModel.dll
 d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\bin\TrashBoatModel.pdb
 d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\obj\Debug\TrashBoatASP.csprojResolveAssemblyReference.cache
 d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\obj\Debug\TrashBoatASP.dll
 d:\documents\visual studio 2015\Projects\TrashBoatASP\TrashBoatASP\obj\Debug\TrashBoatASP.pdb

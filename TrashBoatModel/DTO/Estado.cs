@@ -13,48 +13,37 @@ los minutos)
 o Datos adicionales requeridos en el caso de la evaluación 2*/
 namespace TrashBoatModel.DTO
 {
-    public class Estado 
+    public class Estado
     {
-        private int id;
-        private Contenedor idContenedor;
+        private int idEstado;
         private DateTime fechaLectura; //incluye la hora 
         private int tipoEstado; //1 Cerca del limite,  0 OK, -1 ERROR
-
-        public Estado(int id, Contenedor idContenedor, DateTime fechaLectura, int tipoEstado)
-        {
-            this.id = id;
-            this.idContenedor = idContenedor;
-            this.fechaLectura = fechaLectura;
-            this.tipoEstado = tipoEstado;
-        }
+        private int nivelDeLlenado;
+        private Contenedor contenedor;
 
         public Estado()
         {
+
+        }
+        public Estado(int idEstado, DateTime fechaLectura, int tipoEstado, int nivelDeLlenado, Contenedor contenedor)
+        {
+            this.idEstado = idEstado;
+            this.fechaLectura = fechaLectura;
+            this.tipoEstado = tipoEstado;
+            this.nivelDeLlenado = nivelDeLlenado;
+            this.contenedor = contenedor;
         }
 
-        public int Id
+        public int IdEstado
         {
             get
             {
-                return id;
+                return idEstado;
             }
 
             set
             {
-                id = value;
-            }
-        }
-
-        public Contenedor IdContenedor
-        {
-            get
-            {
-                return idContenedor;
-            }
-
-            set
-            {
-                idContenedor = value;
+                idEstado = value;
             }
         }
 
@@ -81,6 +70,32 @@ namespace TrashBoatModel.DTO
             set
             {
                 tipoEstado = value;
+            }
+        }
+
+        public int NivelDeLlenado
+        {
+            get
+            {
+                return nivelDeLlenado;
+            }
+
+            set
+            {
+                nivelDeLlenado = value;
+            }
+        }
+
+        public Contenedor Contenedor
+        {
+            get
+            {
+                return contenedor;
+            }
+
+            set
+            {
+                contenedor = value;
             }
         }
     }

@@ -57,7 +57,7 @@ namespace TrashBoatASP
                 cargarTabla(this.contenedoresDAL.GetAll());
             } else
             {
-                cargarTabla(this.contenedoresDAL.FindByTipo(selected));
+                cargarTabla(this.contenedoresDAL.FindByRegion(selected));
             }
         }
     }

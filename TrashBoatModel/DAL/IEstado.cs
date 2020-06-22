@@ -12,5 +12,6 @@ namespace TrashBoatModel.DAL
         void Add(Estado estado);
         List<Estado> GetAll();
         void Delete(Estado estado);
+        List<Estado> FindByContenedor(Contenedor contenedor);
     }
 }

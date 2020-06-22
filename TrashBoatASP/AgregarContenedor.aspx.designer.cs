@@ -22,6 +22,15 @@ namespace TrashBoatASP {
         protected global::System.Web.UI.WebControls.TextBox numeroSerieTxt;
         
         /// <summary>
+        /// existValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator existValidator;
+        
+        /// <summary>
         /// numeroSerieValidator control.
         /// </summary>
         /// <remarks>
@@ -29,24 +38,6 @@ namespace TrashBoatASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator numeroSerieValidator;
-        
-        /// <summary>
-        /// nivelLlenadoTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nivelLlenadoTxt;
-        
-        /// <summary>
-        /// nivelLlenadoValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator nivelLlenadoValidator;
         
         /// <summary>
         /// regionDdl control.
@@ -58,6 +49,15 @@ namespace TrashBoatASP {
         protected global::System.Web.UI.WebControls.DropDownList regionDdl;
         
         /// <summary>
+        /// regionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator regionValidator;
+        
+        /// <summary>
         /// sedeDdl control.
         /// </summary>
         /// <remarks>
@@ -65,15 +65,6 @@ namespace TrashBoatASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList sedeDdl;
-        
-        /// <summary>
-        /// estadoDdl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList estadoDdl;
         
         /// <summary>
         /// registrarContenedorBtn control.

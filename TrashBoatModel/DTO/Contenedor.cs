@@ -20,10 +20,30 @@ namespace TrashBoatModel.DTO
     public class Contenedor
     {
         private String numeroDeSerie;
-        private int nivelLlenado;
+        private List<Estado> estados; // nivel de llenado y el tipo.
         private String region;
-        private String idSede;
-        private int tipoEstado;
+        private Sede sede; // Nombre de sede.
+
+         
+
+        public Contenedor()
+        {
+
+        }
+        
+
+        public Contenedor(string numeroDeSerie, string region, Sede sede)
+        {
+            this.numeroDeSerie = numeroDeSerie;
+            this.region = region;
+            this.sede = sede;
+        }
+
+        public Contenedor(string numeroDeSerie, List<Estado> estados)
+        {
+            this.numeroDeSerie = numeroDeSerie;
+            this.estados = estados;
+        }
 
         public string NumeroDeSerie
         {
@@ -38,16 +58,16 @@ namespace TrashBoatModel.DTO
             }
         }
 
-        public int NivelLlenado
+        public List<Estado> Estados
         {
             get
             {
-                return nivelLlenado;
+                return estados;
             }
 
             set
             {
-                nivelLlenado = value;
+                estados = value;
             }
         }
 
@@ -64,30 +84,22 @@ namespace TrashBoatModel.DTO
             }
         }
 
-        public string IdSede
+        public Sede Sede
         {
             get
             {
-                return idSede;
+                return sede;
             }
 
             set
             {
-                idSede = value;
+                sede = value;
             }
         }
 
-        public int TipoEstado
+        public void setEstados(List<Estado> estados)
         {
-            get
-            {
-                return tipoEstado;
-            }
-
-            set
-            {
-                tipoEstado = value;
-            }
+            this.estados = estados;
         }
     }
 }

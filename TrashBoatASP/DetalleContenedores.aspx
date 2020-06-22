@@ -21,10 +21,9 @@
                     ID="contenedoresGrid"
                     CssClass="table table-hover table-bordered table-dark">
                     <Columns>
-                        <asp:BoundField HeaderText="Número de serie" DataField="NumeroDeSerie"/>
-                        <asp:BoundField HeaderText="Nivel de llenado actual" DataField="NivelLlenado"/>
+                        <asp:BoundField HeaderText="Número de Serie" DataField="NumeroDeSerie" />
                         <asp:BoundField HeaderText="Región" DataField="Region" />
-                        <asp:BoundField HeaderText="Sede" DataField="IdSede" />
+                        <asp:BoundField HeaderText="Sede" DataField="Sede.Nombre" />
                     </Columns>
                 </asp:GridView>
             </div>
