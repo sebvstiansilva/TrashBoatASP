@@ -22,6 +22,15 @@ namespace TrashBoatASP {
         protected global::System.Web.UI.WebControls.DropDownList contenedoresDdl;
         
         /// <summary>
+        /// RequiredFieldValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        
+        /// <summary>
         /// fechaLectura control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace TrashBoatASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar fechaLectura;
+        
+        /// <summary>
+        /// fechaLecturaValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator fechaLecturaValidator;
         
         /// <summary>
         /// horaTxt control.
@@ -40,6 +58,24 @@ namespace TrashBoatASP {
         protected global::System.Web.UI.WebControls.TextBox horaTxt;
         
         /// <summary>
+        /// horaValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator horaValidator;
+        
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        
+        /// <summary>
         /// minutosTxt control.
         /// </summary>
         /// <remarks>
@@ -49,6 +85,24 @@ namespace TrashBoatASP {
         protected global::System.Web.UI.WebControls.TextBox minutosTxt;
         
         /// <summary>
+        /// minutoValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator minutoValidator;
+        
+        /// <summary>
+        /// RequiredFieldValidator3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        
+        /// <summary>
         /// nivelLlenadoTxt control.
         /// </summary>
         /// <remarks>
@@ -56,6 +110,15 @@ namespace TrashBoatASP {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox nivelLlenadoTxt;
+        
+        /// <summary>
+        /// nivelValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator nivelValidator;
         
         /// <summary>
         /// tipoDdl control.

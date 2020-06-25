@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -66,6 +67,51 @@ namespace TrashBoatASP
                 Response.Redirect("MostrarEstados.aspx");
 
             }
+        }
+
+        protected void fechaLecturaValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (fechaLectura.SelectedDate.Date == DateTime.MinValue)
+            {
+                args.IsValid = false;
+            } else
+            {
+                args.IsValid = true;
+            }
+        }
+
+        protected void horaValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            Regex rg = new Regex("[0-9]*$");
+            args.IsValid = rg.IsMatch(this.horaTxt.Text);
+        }
+
+        protected void minutoValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            Regex rg = new Regex("[0-9]*$");
+            args.IsValid = rg.IsMatch(this.minutosTxt.Text);
+            int minuto = 0;
+            args.IsValid = Int32.TryParse(this.minutosTxt.Text, out minuto);
+            if (minuto >= 0)
+            {
+                args.IsValid = true;
+            }
+            else if (minuto <= 59)
+            {
+                args.IsValid = true;
+
+            }
+            else
+            {
+                args.IsValid = false;
+                horaValidator.ErrorMessage = "Minuto invalida";
+            }
+        }
+
+        protected void nivelValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            Regex rg = new Regex("[0-9]*$");
+            args.IsValid = rg.IsMatch(this.nivelLlenadoTxt.Text);
         }
     }
 }
